@@ -1,4 +1,4 @@
-# pyrefly-flake
+# Nix flake package for pyrefly
 
 This is a flake for the [pyrefly](https://github.com/facebook/pyrefly).
 
