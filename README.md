@@ -2,8 +2,6 @@
 
 This is a flake for the [pyrefly](https://github.com/facebook/pyrefly).
 
-This package is provided as an alternative until this [PR](https://github.com/NixOS/nixpkgs/pull/417968) is merged.
-
 ## Usage
 
 ```nix
