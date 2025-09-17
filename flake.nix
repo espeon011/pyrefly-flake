@@ -26,21 +26,19 @@
 
         pyrefly = rustPlatform.buildRustPackage (finalAttrs: {
           pname = "pyrefly";
-          # version = "0.32.0";
-          version = "main";
+          version = "0.33.0";
 
           src = pkgs.fetchFromGitHub {
             owner = "facebook";
             repo = "pyrefly";
-            # tag = finalAttrs.version;
-            rev = "8f11883179db399e36deccd65c7ad844a88bdc62";
-            hash = "sha256-U+sk3wvpmPJoDOuCji3XyyseHuv4JMYsyiB1kl1D1Ak=";
+            tag = finalAttrs.version;
+            hash = "sha256-sI+F+kI8ApE1cHpE3q/tSntaD/1c26jT5BLJ3BtzpBA=";
           };
 
           buildAndTestSubdir = "pyrefly";
-          cargoHash = "sha256-72FFUBmwR0GRwnZFCaIVlQ5ACCEy4nQJBGU1j71wv5s=";
+          cargoHash = "sha256-+93SQA0KrJsskXUMA9S5eaq0EIWVK1/ZoUbp6wQ7Cc4=";
 
-          # nativeInstallCheckInputs = [pkgs.versionCheckHook];
+          nativeInstallCheckInputs = [pkgs.versionCheckHook];
           doInstallCheck = true;
 
           # requires unstable rust features
