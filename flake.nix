@@ -45,10 +45,6 @@
             "--skip=test::lsp::lsp_interaction::configuration::test_workspace_pythonpath_ignored_when_set_in_config_file"
             "--skip=test::lsp::lsp_interaction::notebook_definition::test_notebook_definition_import"
           ];
-          # > failures:
-          # >     test::lsp::lsp_interaction::configuration::test_pythonpath_change
-          # >     test::lsp::lsp_interaction::configuration::test_workspace_pythonpath_ignored_when_set_in_config_file
-          # >     test::lsp::lsp_interaction::notebook_definition::test_notebook_definition_import
 
           # requires unstable rust features
           env.RUSTC_BOOTSTRAP = 1;
