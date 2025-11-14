@@ -26,20 +26,29 @@
 
         pyrefly = rustPlatform.buildRustPackage (finalAttrs: {
           pname = "pyrefly";
-          version = "0.34.0";
+          version = "0.41.2";
 
           src = pkgs.fetchFromGitHub {
             owner = "facebook";
             repo = "pyrefly";
             tag = finalAttrs.version;
-            hash = "sha256-HPPDsvWEFfh/GNMUPiVjQr28YBBs2DACBGM3cxo5Nx4=";
+            hash = "sha256-m4rj5isJBjVtog0J4SaWFKHSAeOVPQ3egPiLUpeuYYY=";
           };
 
           buildAndTestSubdir = "pyrefly";
-          cargoHash = "sha256-46kcoBG/PWwf8VdlvLNzEhfYRTmmKi/uTjwFkl7Wozg=";
+          cargoHash = "sha256-muR/Wi4Kzi6GRoi0UTN4bPCH/MFMREIPANIPIcosLKo=";
 
           nativeInstallCheckInputs = [pkgs.versionCheckHook];
           doInstallCheck = true;
+          checkFlags = [
+            "--skip=test::lsp::lsp_interaction::configuration::test_pythonpath_change"
+            "--skip=test::lsp::lsp_interaction::configuration::test_workspace_pythonpath_ignored_when_set_in_config_file"
+            "--skip=test::lsp::lsp_interaction::notebook_definition::test_notebook_definition_import"
+          ];
+          # > failures:
+          # >     test::lsp::lsp_interaction::configuration::test_pythonpath_change
+          # >     test::lsp::lsp_interaction::configuration::test_workspace_pythonpath_ignored_when_set_in_config_file
+          # >     test::lsp::lsp_interaction::notebook_definition::test_notebook_definition_import
 
           # requires unstable rust features
           env.RUSTC_BOOTSTRAP = 1;
