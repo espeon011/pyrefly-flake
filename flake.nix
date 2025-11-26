@@ -26,17 +26,17 @@
 
         pyrefly = rustPlatform.buildRustPackage (finalAttrs: {
           pname = "pyrefly";
-          version = "0.41.2";
+          version = "0.43.1";
 
           src = pkgs.fetchFromGitHub {
             owner = "facebook";
             repo = "pyrefly";
             tag = finalAttrs.version;
-            hash = "sha256-m4rj5isJBjVtog0J4SaWFKHSAeOVPQ3egPiLUpeuYYY=";
+            hash = "sha256-KVeuDK5f0VIMnhAMJvGMJ08tHOuuIBDPrTqO1YjsHXI=";
           };
 
           buildAndTestSubdir = "pyrefly";
-          cargoHash = "sha256-muR/Wi4Kzi6GRoi0UTN4bPCH/MFMREIPANIPIcosLKo=";
+          cargoHash = "sha256-Cc3bLBP9SxMbXQmJJVIfItOzy0iUkxLMgk4fbzNP1yw=";
 
           nativeInstallCheckInputs = [pkgs.versionCheckHook];
           doInstallCheck = true;
